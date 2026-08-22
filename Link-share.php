@@ -2,14 +2,15 @@
 /*
 Plugin Name: Link Share
 Plugin URI: https://www.ixiqin.com/2017/08/linkshare-links-wordpress-share-plug-ins/
-Description: 为你提供链接分享功能
-Version: 0.0.5
+Description: Support You A new Post Type to Share WebPage to your friends.
+Version: 0.0.6
 Author: Bestony
 Author URI: https://www.ixiqin.com/
 License:     GPL2
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: bestony
-Domain Path: /plugin
+Text Domain: link-share
+Domain Path: /languages
 
 Link Share is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -58,35 +59,26 @@ function return_link_list(){
  */
 function linkshare_setup_post_types(){
 	$labels = array(
-		'name'                  => __( '分享'),
-		'singular_name'         => __( '分享'),
-		'menu_name'             => __( '分享'),
-		'name_admin_bar'        => __( '分享'),
-		'add_new'               => __( '新建'),
-		'add_new_item'          => __( '新建分享'),
-		'new_item'              => __( '新分享'),
-		'edit_item'             => __( '编辑分享'),
-		'view_item'             => __( '查看分享'),
-		'all_items'             => __( '所有分享'),
-		'search_items'          => __( '搜索分享'),
-		'parent_item_colon'     => __( '上级分享'),
-		'not_found'             => __( '分享未找到。'),
-		'not_found_in_trash'    => __( '垃圾箱中没有分享'),
-		'featured_image'        => __( '分享图片'),
-		'set_featured_image'    => __( '设置分享图片'),
-		'remove_featured_image' => __( '移除分享图片'),
-		'use_featured_image'    => __( '使用分享图片'),
-		'archives'              => __( '分享列表'),
-		'insert_into_item'      => __( '插入新的分享'),
-		'uploaded_to_this_item' => __( '上传到这个分享'),
-		'filter_items_list'     => __( '筛选分享'),
-		'items_list_navigation' => __( '分享列表导航'),
-		'items_list'            => __( '分享列表'),
+		'name'                  => __( 'LinkShare','link-share'),
+		'singular_name'         => __( 'LinkShare','link-share'),
+		'menu_name'             => __( 'LinkShare','link-share'),
+		'name_admin_bar'        => __( 'LinkShare','link-share'),
+		'add_new'               => __( 'New','link-share'),
+		'add_new_item'          => __( 'New LinkShare','link-share'),
+		'new_item'              => __( 'New LinkShare','link-share'),
+		'edit_item'             => __( 'Edit LinkShare','link-share'),
+		'view_item'             => __( 'View LinkShare','link-share'),
+		'all_items'             => __( 'All LinkShares','link-share'),
+		'search_items'          => __( 'Search LinkShares','link-share'),
+		'parent_item_colon'     => __( 'Parent LinkShare','link-share'),
+		'not_found'             => __( 'This LinkShare Not Found','link-share'),
+		'not_found_in_trash'    => __( 'Here is no Linkshare','link-share'),
+		'archives'              => __( 'LinkShare Archives','link-share'),
 	);
 
 	$args = array(
 		'labels'             => $labels,
-		'description'        => "快速分享",
+		'description'        => __('Quickly Share a new WebPage to your friends','link-share'),
 		'public'             => true,
 		'publicly_queryable' => true,
 		'show_ui'            => true,
@@ -109,7 +101,7 @@ function linkshare_setup_post_types(){
  * 注册信息框
  */
 function linkshare_register_meta_boxes() {
-	add_meta_box( 'meta-box-id', __( '分享信息', 'textdomain' ), 'linkshare_my_display_callback', 'linkshare' );
+	add_meta_box( 'meta-box-id', __( 'LinkShare Detail Information', 'link-share' ), 'linkshare_my_display_callback', 'linkshare' );
 }
 
 /**
@@ -129,24 +121,24 @@ function linkshare_my_display_callback( $post ) {
 
 			<tr>
 				<th scope="row">
-					<label for="my-text-field"><?php _e( '分享评论', 'linkshare_metaBox' ); ?></label>
+					<label for="my-text-field"><?php _e( 'Comment', 'link-share' ); ?></label>
 				</th>
 
 				<td>
 					<input type="text" name="comment" value="<?php echo $comment; ?>"  width="100%" style="width:400px !important;"/>
 					<br>
-					<span class="description">你自己针对文章的评论.</span>
+					<span class="description"><?php _e('The Comment of This webpage of you. You can leave it blank.','link-share') ?></span>
 				</td>
 			</tr>
 			<tr>
 				<th scope="row">
-					<label for="my-text-field"><?php _e( '分享链接', 'linkshare_metaBox' ); ?></label>
+					<label for="my-text-field"><?php _e( 'Web Page URL', 'link-share' ); ?></label>
 				</th>
 
 				<td>
 					<input type="text" name="url" value="<?php echo $url; ?>"  width="100%" style="width:400px !important;" />
 					<br>
-					<span class="description">文章的链接.</span>
+					<span class="description"><?php _e("URL of the web page ,you can copy it from your web browser address bar","link-share") ;?></span>
 				</td>
 			</tr>
 		</table>
@@ -184,13 +176,21 @@ function wpdocs_save_meta_box( $post_id ) {
 
 }
 
+function i10n(){
+    $current_locale = get_locale();
+    if(!empty($current_locale)){
+        $mo_file = dirname(__FILE__).'/languages/'.$current_locale.".mo";
+        if (@file_exists($mo_file)&& is_readable($mo_file))
+            load_textdomain('link-share',$mo_file);
+    }
+}
+
 /**
  * 激活 Hook
  */
 function linkshare_install()
 {
 	linkshare_setup_post_types();
-
 	flush_rewrite_rules();
 }
 
@@ -203,6 +203,7 @@ function linkshare_deactivation()
 }
 
 // Activation Hook
+add_action('init','i10n');
 add_action( 'init', 'linkshare_setup_post_types' );
 register_activation_hook( __FILE__, 'linkshare_install' );
 add_action( 'add_meta_boxes', 'linkshare_register_meta_boxes' );

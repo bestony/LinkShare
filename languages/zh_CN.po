@@ -1,0 +1,111 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Link Share\n"
+"POT-Creation-Date: 2017-09-09 17:52+0800\n"
+"PO-Revision-Date: 2017-09-09 17:52+0800\n"
+"Last-Translator: Bestony <xiqingongzi@gmail.com>\n"
+"Language-Team: \n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.1\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-WPHeader: Link-share.php\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;"
+"_n_noop:1,2;_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#: Link-share.php:61 Link-share.php:62 Link-share.php:63 Link-share.php:64
+msgid "LinkShare"
+msgstr "分享"
+
+#: Link-share.php:65
+msgid "New"
+msgstr "新建"
+
+#: Link-share.php:66 Link-share.php:67
+msgid "New LinkShare"
+msgstr "新建分享"
+
+#: Link-share.php:68
+msgid "Edit LinkShare"
+msgstr "编辑分享"
+
+#: Link-share.php:69
+msgid "View LinkShare"
+msgstr "查看分享"
+
+#: Link-share.php:70
+msgid "All LinkShares"
+msgstr "所有分享"
+
+#: Link-share.php:71
+msgid "Search LinkShares"
+msgstr "搜索"
+
+#: Link-share.php:72
+msgid "Parent LinkShare"
+msgstr "上级分享"
+
+#: Link-share.php:73
+msgid "This LinkShare Not Found"
+msgstr "该分享未找到"
+
+#: Link-share.php:74
+msgid "Here is no Linkshare"
+msgstr "这里没有分享"
+
+#: Link-share.php:75
+msgid "LinkShare Archives"
+msgstr "存档"
+
+#: Link-share.php:80
+msgid "Quickly Share a new WebPage to your friends"
+msgstr "快速分享你发现的网页给朋友们吧！"
+
+#: Link-share.php:103
+msgid "LinkShare Detail Information"
+msgstr "分享详情"
+
+#: Link-share.php:123
+msgid "Comment"
+msgstr "评论"
+
+#: Link-share.php:129
+msgid "The Comment of This webpage of you. You can leave it blank."
+msgstr "你对页面的评论。可以为空。"
+
+#: Link-share.php:134
+msgid "Web Page URL"
+msgstr "网页地址"
+
+#: Link-share.php:140
+msgid "URL of the web page ,you can copy it from your web browser address bar"
+msgstr "页面的地址，你可以从浏览器的地址栏中获得。"
+
+#. Plugin Name of the plugin/theme
+msgid "Link Share"
+msgstr "Link Share"
+
+#. Plugin URI of the plugin/theme
+msgid ""
+"https://www.ixiqin.com/2017/08/linkshare-links-wordpress-share-plug-ins/"
+msgstr ""
+"https://www.ixiqin.com/2017/08/linkshare-links-wordpress-share-plug-ins/"
+
+#. Description of the plugin/theme
+msgid "Support You A new Post Type to Share WebPage to your friends."
+msgstr "为你提供一个用于分享网页给你的朋友们的文章类型"
+
+#. Author of the plugin/theme
+msgid "Bestony"
+msgstr "Bestony"
+
+#. Author URI of the plugin/theme
+msgid "https://www.ixiqin.com/"
+msgstr "https://www.ixiqin.com/"
